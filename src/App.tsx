@@ -1,6 +1,7 @@
 import { Container } from "./components/Container";
-import { Heading } from "./components/Heading";
+import { Menu } from "./components/Menu";
 import { Logo } from "./components/Logo";
+import { CountDown } from "./components/CountDown";
 
 import "./styles/global.css";
 import "./styles/themes.css";
@@ -12,7 +13,10 @@ export function App() {
         <Logo />
       </Container>
       <Container>
-        <Heading>LOGO</Heading>
+        <Menu />
+      </Container>
+      <Container>
+        <CountDown />
       </Container>
     </>
   );
