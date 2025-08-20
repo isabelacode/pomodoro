@@ -9,11 +9,11 @@
   --gray-800: #181f2e;
   --gray-900: #0a0f1a;
 
-  --primary-light: #4de7b7;
-  --primary: #0da170;
-  --primary-dark: #065f46;
-  --link-color: #10b981;
-  --link-hover: #0b8a60;
+  --primary-light: #ac74cc;
+  --primary: #6a1f96;
+  --primary-dark: #4e1072;
+  --link-color: #a868cd;
+  --link-hover: #733b94;
 
   --success: #22c55e;
   --warning: #eab308;
@@ -60,8 +60,8 @@
   --text-default: #0a0f1a;
   --text-muted: #272f43;
 
-  --link-color: #0b8a60;
-  --link-hover: #065f46;
+  --link-color: #b46bde;
+  --link-hover: #4e1072;
 
   --toastify-text-color-light: #e6e9f0;
   --toastify-text-color-dark: #e6e9f0;
