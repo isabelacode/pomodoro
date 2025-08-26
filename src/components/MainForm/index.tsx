@@ -2,6 +2,13 @@ import { PlayCircleIcon } from "lucide-react";
 import { Cycles } from "../Cycles";
 import { DefaultButton } from "../DefaultButton";
 import { DefaultInput } from "../DefaultInput";
+// import type { TaskStateModel } from "../../Models/TaskStateModel";
+
+// Preparado para receber props no futuro:
+// type MainFormProps = {
+//   state: TaskStateModel;
+//   setState: React.Dispatch<React.SetStateAction<TaskStateModel>>;
+// };
 
 export function MainForm() {
   return (
