@@ -4,21 +4,19 @@ import { CountDown } from "../../../components/CountDown";
 import { MainForm } from "../../../components/MainForm";
 import type { TaskStateModel } from "../../../Models/TaskStateModel";
 
-type HomeProps = {
+export type HomeProps = {
   state: TaskStateModel;
   setState: React.Dispatch<React.SetStateAction<TaskStateModel>>;
 };
 
 export function Home(props: HomeProps) {
-  const { state, setState } = props;
   return (
     <MainTemplate>
       <Container>
-        <CountDown state={state} setState={setState} />
+        <CountDown {...props} />
       </Container>
-
       <Container>
-        <MainForm />
+        <MainForm  {...props}  />
       </Container>
     </MainTemplate>
   );
