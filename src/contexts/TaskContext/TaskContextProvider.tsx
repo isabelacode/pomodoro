@@ -1,6 +1,6 @@
-import {  useState } from "react";
-import { initialTaskState } from "./initialTaskState";
-import { TaskContext } from "./TaskContext";
+import {  useReducer, useState } from 'react';
+import { initialTaskState } from './initialTaskState';
+import { TaskContext } from './TaskContext';
 
 type TaskContextProviderProps = {
   children: React.ReactNode;
@@ -9,33 +9,58 @@ type TaskContextProviderProps = {
 export function TaskContextProvider({ children }: TaskContextProviderProps) {
   const [state, setState] = useState(initialTaskState);
 
-  const [numero, dispatch] = useReducer((state, action) => {
-    console.log(state, action);
+  type ActionType = {
+    type: string;
+    payload?: number;
+  };
+  const [myState, dispatch] = useReducer(
+    (state, action: ActionType) => {
+      console.log(state, action);
 
-    switch (action) {
-      case 'INCREMENT':
-        return state + 1;
-      case 'DECREMENT':
-        return state - 1;
-      case 'INITIAL_STATE':
-        return 0;
-    }
+      switch (action.type) {
+        case "INCREMENT": {
+          if (!action.payload) return state;
 
-    return state; // estado atual (não altera)
-  }, 0);
+          return {
+            ...state,
+            secondsRemaing: state.secondsRemaing + action.payload,
+          };
+        }
+        case "DECREMENT": {
+          if (!action.payload) return state;
 
-  // useEffect(() => {
-  //   console.log(state);
-  // }, [state]);
+          return {
+            ...state,
+            secondsRemaing: state.secondsRemaing - action.payload,
+          };
+        }
+        case "RESET": {
+          return {
+            secondsRemaing: 0,
+          };
+        }
+      }
+
+      return state; // estado atual (não altera)
+    },
+    {
+      secondsRemaing: 0,
+    },
+  );
 
   return (
     <TaskContext.Provider value={{ state, setState }}>
-      <h1>O número é: {numero}</h1>
-      <button onClick={() => dispatch('INCREMENT')}>Incrementar</button>
-      <button onClick={() => dispatch('DECREMENT')}>Decrementar</button>
-      <button onClick={() => dispatch('INITIAL_STATE')}>ZERAR</button>
+      <h1>O estado é: {JSON.stringify(myState)}</h1>
+      <button onClick={() => dispatch({ type: "INCREMENT", payload: 10 })}>
+        Incrementar +10
+      </button>
+      <button onClick={() => dispatch({ type: "INCREMENT", payload: 20 })}>
+        Incrementar +20
+      </button>
+      <button onClick={() => dispatch({ type: "DECREMENT", payload: 50 })}>
+        Decrementar -50
+      </button>
+      <button onClick={() => dispatch({ type: "RESET" })}>RESET</button>
     </TaskContext.Provider>
-
-
   );
 }
