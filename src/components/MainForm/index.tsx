@@ -14,9 +14,11 @@ import { showMessage } from "../../adapters/showMessage";
 export function MainForm() {
   const { state, dispatch } = useTaskContext();
   const taskNameInput = useRef<HTMLInputElement>(null);
+  const lastTaskName = state.tasks[state.tasks.length - 1]?.name || "";
 
+  // ciclos
   const nextCycle = getNextCycle(state.currentCycle);
-  const nextCycleType = getNextCycleType(nextCycle);
+  const nextCyleType = getNextCycleType(nextCycle);
 
   function handleCreateNewTask(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -37,11 +39,12 @@ export function MainForm() {
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
-      duration: state.config[nextCycleType],
-      type: nextCycleType,
+      duration: state.config[nextCyleType],
+      type: nextCyleType,
     };
 
     dispatch({ type: TaskActionTypes.START_TASK, payload: newTask });
+
     showMessage.success("Tarefa iniciada");
   }
 
@@ -50,6 +53,7 @@ export function MainForm() {
     showMessage.error("Tarefa interrompida!");
     dispatch({ type: TaskActionTypes.INTERRUPT_TASK });
   }
+
   return (
     <form onSubmit={handleCreateNewTask} className="form" action="">
       <div className="formRow">
@@ -60,6 +64,7 @@ export function MainForm() {
           placeholder="Digite algo"
           ref={taskNameInput}
           disabled={!!state.activeTask}
+          defaultValue={lastTaskName}
         />
       </div>
 
