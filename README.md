@@ -1,69 +1,90 @@
-# React + TypeScript + Vite
+# Timer Pomodoro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo de timer Pomodoro moderno e elegante construído com React, TypeScript e Vite. Gerencie sua produtividade com a técnica Pomodoro de forma eficiente e intuitiva.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Timer Pomodoro**: Cronômetro com ciclos de trabalho e pausas personalizáveis
+- **Gerenciamento de Tarefas**: Crie, edite e acompanhe suas tarefas
+- **Ciclos Automáticos**: Alternância automática entre períodos de trabalho e descanso
+- **Notificações Sonoras**: Alertas sonoros ao final de cada ciclo
+- **Histórico**: Acompanhe o progresso das suas tarefas concluídas
+- **Configurações**: Personalize os tempos de trabalho e pausas
+- **Interface Moderna**: Design clean e responsivo
+- **Temas**: Suporte a diferentes temas visuais
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 19** - Biblioteca para interface de usuário
+- **TypeScript** - Tipagem estática para JavaScript
+- **Vite** - Build tool moderna e rápida
+- **React Router** - Navegação entre páginas
+- **CSS Modules** - Estilização modular
+- **Web Workers** - Processamento em background para o timer
+- **Date-fns** - Manipulação de datas
+- **React Toastify** - Notificações em toast
+- **Lucide React** - Ícones modernos
 
-```js
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## Como Executar
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Pré-requisitos
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+
+### Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/isabelacode/pomodoro.git
+cd pomodoro
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Instale as dependências:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
-
-export default tseslint.config([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
 ```
+
+3. Execute o projeto em modo de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+4. Acesse no navegador: `http://localhost:5173`
+
+## Como Usar
+
+### 1. Técnica Pomodoro Padrão
+
+- **Trabalho**: 25 minutos de foco total
+- **Pausa Curta**: 5 minutos de descanso
+- **Pausa Longa**: 15 minutos de descanso (a cada 4 ciclos)
+
+### 2. Criar uma Tarefa
+
+1. Digite o nome da tarefa no campo de entrada
+2. Clique em "Iniciar" para começar o cronômetro
+3. Foque na tarefa durante o período de trabalho
+
+### 3. Gerenciar Ciclos
+
+- O timer alternará automaticamente entre trabalho e pausas
+- Use os botões de controle para pausar, retomar ou parar
+- Acompanhe o progresso atual no display
+
+### 4. Histórico e Configurações
+
+- Acesse o **Histórico** para ver suas tarefas concluídas
+- Vá em **Configurações** para personalizar os tempos dos ciclos
+- Consulte **Sobre** para aprender mais sobre a técnica Pomodoro
+
+## Créditos
+
+Este projeto foi desenvolvido com base no curso **"Curso de ReactJS e NextJS - Completo do Básico ao Avançado"** da Udemy.
+
+**Instrutor**: [Nome do Instrutor]  
+**Curso**: [ReactJS e NextJS - Completo do Básico ao Avançado](https://www.udemy.com/course/curso-de-reactjs-nextjs-completo-do-basico-ao-avancado/)  
+**Plataforma**: Udemy

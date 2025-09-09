@@ -7,7 +7,7 @@ import { MainTemplate } from "../../templates/MainTemplate";
 
 export function AboutPomodoro() {
   useEffect(() => {
-    document.title = "Entenda a Técnica Pomodoro - Chronos Pomodoro";
+    document.title = "Entenda a Técnica Pomodoro - Timer Pomodoro";
   }, []);
 
   return (
@@ -44,7 +44,7 @@ export function AboutPomodoro() {
           </ul>
 
           <h2>
-            Mas no <strong>Chronos Pomodoro</strong> tem um diferencial
+            Mas no <strong>Timer Pomodoro</strong> tem um diferencial
           </h2>
 
           <p>
@@ -107,7 +107,7 @@ export function AboutPomodoro() {
             evolução ao longo do tempo.
           </p>
 
-          <h2>Por que usar o Chronos Pomodoro?</h2>
+          <h2>Por que usar o Timer Pomodoro?</h2>
           <ul>
             <li> - Organize seu foco com clareza.</li>
             <li> - Trabalhe e descanse na medida certa.</li>

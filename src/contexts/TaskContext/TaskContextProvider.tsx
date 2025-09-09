@@ -5,7 +5,7 @@ import { taskReducer } from "./taskReducer";
 import { TimerWorkerManager } from "../../workers/TimerWorkerManager";
 import { TaskActionTypes } from "./taskActions";
 import { loadBeep } from "../../utils/loadBeep";
-import { TaskStateModel } from "../../models/TaskStateModel";
+import type { TaskStateModel } from "../../models/TaskStateModel";
 
 type TaskContextProviderProps = {
   children: React.ReactNode;
@@ -57,7 +57,7 @@ export function TaskContextProvider({ children }: TaskContextProviderProps) {
       worker.terminate();
     }
 
-    document.title = `${state.formattedSecondsRemaining} - Chronos Pomodoro`;
+    document.title = `${state.formattedSecondsRemaining} - Timer Pomodoro`;
 
     worker.postMessage(state);
   }, [worker, state]);
