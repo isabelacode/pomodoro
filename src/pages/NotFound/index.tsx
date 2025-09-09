@@ -14,7 +14,7 @@ export function NotFound() {
     <MainTemplate>
       <Container>
         <GenericHtml>
-          <Heading>404 - Página não encontrada 🚀</Heading>
+          <Heading>404 - Página não encontrada</Heading>
           <p>
             Opa! Parece que a página que você está tentando acessar não existe.
             Talvez ela tenha tirado férias, resolvido explorar o universo ou se
@@ -25,7 +25,7 @@ export function NotFound() {
             segurança para a <RouterLink href="/">página principal</RouterLink>{" "}
             ou <RouterLink href="/history/">para o histórico</RouterLink> — ou
             pode ficar por aqui e fingir que achou uma página secreta que só os
-            exploradores mais legais conseguem acessar. 🧭✨
+            exploradores mais legais conseguem acessar.
           </p>
           <p>
             Se você acha que essa página deveria existir (ou se quiser bater um
@@ -34,7 +34,7 @@ export function NotFound() {
           </p>
           <p>
             Enquanto isso, fica aqui uma reflexão: "Se uma página não existe na
-            internet, será que ela existiu de verdade?" 🤔💭
+            internet, será que ela existiu de verdade?"
           </p>
         </GenericHtml>
       </Container>
